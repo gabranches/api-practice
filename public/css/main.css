@@ -1,0 +1,47 @@
+html, body, #main-frame {
+	height:100%;
+}
+
+#top-frame {
+	height: 50%;
+	background-color: #000066;
+}
+
+#bottom-frame {
+	border-top: 3px solid white;
+	height: 50%;
+	overflow-y: auto;
+}
+
+.channel-row {
+	height: 70px;
+	border-top: 1px solid white;
+	background-color: #3366CC;
+	padding: 10px;
+	color: white;
+}
+
+#chat-embed {
+	position: absolute; 
+	width: 100%; 
+	height: 100%;
+	left:0;
+}
+
+#chat-embed-wrapper {
+	position: relative;
+	height: 100%;
+}
+
+#video-embed {
+	position: absolute; 
+	width: 100%; 
+	height: 100%;
+		left:0;
+
+}
+
+#video-embed-wrapper {
+	position: relative;
+	height: 100%;
+}

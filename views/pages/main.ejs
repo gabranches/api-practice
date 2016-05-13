@@ -1,16 +1,36 @@
-<div ng-controller="frontPageController" class="container">
+<div ng-controller="frontPageController" id="main-frame" class="container-fluid">
 	
 	<div id="top-frame" class="row main-page-frame">
+
+		<div class="col-xs-4"></div>
+		<div id="video-embed-wrapper" class="col-xs-5" style="height: 100%">
+			<iframe 
+			      id="video-embed"
+			      src="http://player.twitch.tv/?channel=nl_kripp"
+			      frameborder="0" 
+			      scrolling="no"
+			      allowfullscreen="true">
+			  </iframe>
+		</div>
+		<div id="chat-embed-wrapper" class="col-xs-3">
+			<iframe 
+				id="chat-embed" 
+				src="http://twitch.tv/chat/embed?channel=nl_kripp&amp;popout_chat=true" 
+				frameborder="0">
+			</iframe>
+		</div>
 
 	</div>
 
 	<div id="bottom-frame" class="row main-page-frame">
-		{{ streams }}
+		<div class="channel-row" ng-repeat="stream in streams">
+			<span>{{ stream.channel.display_name }}</span>
+		</div>
 	</div>
 
 </div>
 
 <script>
-  var data = <%- JSON.stringify(data) %>;
+  var stream_data = <%- streams %>;
 </script>
 	

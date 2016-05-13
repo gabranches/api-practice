@@ -1,8 +1,8 @@
 <div ng-controller="frontPageController" id="main-frame" class="container-fluid">
 	
-	<div id="top-frame" class="row main-page-frame">
+	<div id="top-frame" class="row main-page-frame resize ui-widget-content">
 
-		<div class="col-xs-4"></div>
+		<div class="col-xs-4 resize"></div>
 		<div id="video-embed-wrapper" class="col-xs-5" style="height: 100%">
 			<iframe 
 			      id="video-embed"
@@ -22,7 +22,7 @@
 
 	</div>
 
-	<div id="bottom-frame" class="row main-page-frame">
+	<div id="bottom-frame" class="row main-page-frame resize ui-widget-content">
 		<div class="channel-row" ng-repeat="stream in streams">
 			<span>{{ stream.channel.display_name }}</span>
 		</div>

@@ -1,3 +1,7 @@
+$(function() {
+	$( ".resize" ).resizable();
+});
+
 var app = angular.module('app', []);
 
 

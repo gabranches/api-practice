@@ -14,11 +14,18 @@ app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
 
-    twitchAPI.getCurStreamsSumm(function(data) {
-        console.log(data);
+    twitchAPI.streams(function(streamData) {
+        console.log(streamData);
+
+        res.render('pages/index', {
+        	data: {
+        		streams: streamData
+        	}
+        });
+
     });
     
-    res.render('pages/index');
+
 });
 
 

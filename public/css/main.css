@@ -49,3 +49,11 @@ html, body, #main-frame {
 	position: relative;
 	height: 100%;
 }
+
+.channel-row {
+	cursor: pointer;
+}
+
+.selected {
+	background-color: #8b008b;
+}

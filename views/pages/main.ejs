@@ -15,14 +15,14 @@
 	</div>
 
 	<div id="bottom-frame" class="row main-page-frame ui-widget-content">
-		<div class="channel-row" ng-repeat="stream in streams">
-			<span>{{ stream.channel.display_name }}</span>
+		<div ng-repeat="stream in streams">
+			<channel-row></channel-row>
 		</div>
 	</div>
 
 </div>
 
-<script>
-  var stream_data = <%- streams %>;
+<script
+>  var stream_data = <%- streams %>;
 </script>
 	

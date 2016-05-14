@@ -1,0 +1,7 @@
+<div 
+	class="channel-row" 
+	ng-click="setLiveStream(stream.channel.name)" 
+	ng-class="{'selected': live.selection == stream.channel.name}"
+>
+	<span>{{ stream.channel.display_name }}</span>
+</div>

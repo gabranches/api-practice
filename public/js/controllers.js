@@ -1,16 +1,14 @@
 // CONTROLLERS
 
-app.controller('frontPageController', ['$scope', '$sce', function($scope, $sce) {
+app.controller('frontPageController', ['$scope', '$sce', '$http', function($scope, $sce, $http) {
 
 	$scope.streams = stream_data.streams;
 
 	$scope.live = {
 
-		selection: (function() {
-			// Pick a random stream from the initial stream list
-			var index = Math.floor(Math.random() * ($scope.streams.length));
-			return $scope.streams[index].channel.name;
-		})(),
+		selection: "",
+
+		menu: 'top-streams',
 
 		stream: {
 			src: function(self) {
@@ -29,9 +27,22 @@ app.controller('frontPageController', ['$scope', '$sce', function($scope, $sce) 
 		}
 	}
 
+	$scope.getGameStreams = function(game) {
+		game = encodeURIComponent(game.trim());
+		$http({
+			method: 'GET',
+			url: 'https://api.twitch.tv/kraken/streams?game=' + game
+		}).then(function successCallback(response) {
+		    $scope.streams = response.data.streams;
+		}, function errorCallback(response) {
+			console.log(response);
+		});
+	}
+
 	$scope.setLiveStream = function(name) {
 		$scope.live.selection = name;
 		console.log(name);
+		
 	}
 
 	angular.element(window).on("resize", function() {
@@ -41,5 +52,13 @@ app.controller('frontPageController', ['$scope', '$sce', function($scope, $sce) 
     $scope.trustSrc = function(src) {
     	return $sce.trustAsResourceUrl(src);
 	}
+
+	pickRandomStream = function() {
+		// Pick a random stream from the initial stream list
+		var index = Math.floor(Math.random() * ($scope.streams.length));
+		$scope.live.selection = $scope.streams[index].channel.name;
+	}
+
+	pickRandomStream();
 
 }]);

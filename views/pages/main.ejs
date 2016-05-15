@@ -1,6 +1,6 @@
 <div ng-controller="frontPageController" id="main-frame" class="container-fluid">
 	
-	<div id="top-frame" class="row main-page-frame resize_vert ui-widget-content">
+	<div id="top-frame" class="row main-page-frame">
 
 		<div id="profile-wrapper" class="col-xs-4 resize_hor">
 			{{stream}}
@@ -14,7 +14,16 @@
 
 	</div>
 
-	<div id="bottom-frame" class="row main-page-frame ui-widget-content">
+	<div id="menu-frame" class="row main-page-frame text-center">
+		<div class="col-xs-2">menu</div>
+		<div class="col-xs-2">menu</div>
+		<div class="col-xs-2">menu</div>
+		<div class="col-xs-2">menu</div>
+		<div class="col-xs-2">menu</div>
+		<div class="col-xs-2">menu</div>
+	</div>
+
+	<div id="bottom-frame" class="row main-page-frame">
 		<div ng-repeat="stream in streams">
 			<channel-row></channel-row>
 		</div>

@@ -1,6 +1,6 @@
 // CONTROLLERS
 
-app.controller('frontPageController', ['$scope', '$sce', '$http', function($scope, $sce, $http) {
+app.controller('frontPageController', ['$scope', '$sce', '$http', 'helpers', function($scope, $sce, $http, helpers) {
 
 	$scope.streams = stream_data.streams;
 
@@ -29,12 +29,13 @@ app.controller('frontPageController', ['$scope', '$sce', '$http', function($scop
 
 	$scope.getGameStreams = function(game) {
 		game = encodeURIComponent(game.trim());
+
 		$http({
 			method: 'GET',
 			url: 'https://api.twitch.tv/kraken/streams?game=' + game
-		}).then(function successCallback(response) {
+		}).then(function success(response) {
 		    $scope.streams = response.data.streams;
-		}, function errorCallback(response) {
+		}, function error(response) {
 			console.log(response);
 		});
 	}
@@ -42,7 +43,7 @@ app.controller('frontPageController', ['$scope', '$sce', '$http', function($scop
 	$scope.setLiveStream = function(name) {
 		$scope.live.selection = name;
 		console.log(name);
-		
+
 	}
 
 	angular.element(window).on("resize", function() {

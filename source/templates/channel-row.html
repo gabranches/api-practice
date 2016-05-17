@@ -6,6 +6,7 @@
 		<img ng-if="stream.channel.logo" class="logo" src="{{trustSrc(stream.channel.logo)}}" />
 		<img ng-if="!stream.channel.logo" class="logo" src="/images/default_logo.png" />
 	</div>
+	
 	<div class="streamer-info">
 		<span class="name">
 			<a ng-click="setLiveStream(stream.channel.name)">{{ stream.channel.display_name }}</a>

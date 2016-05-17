@@ -1,28 +1,37 @@
-$primary-color: #4F5AF0;
+$bg-color: #3F4B6C;
+$primary-color: #333a56;
+$secondary-color: #272727;
+$accent-color: #52658f;
+$text-color1: white;
+$border-color: black;
+$channel-border-color: #3F4B6C;
 
 
 html, body, #main-frame {
 	height:100%;
+	background-color: $bg-color;
 }
 
 #top-frame {
 	height: 50%;
-	background-color: $primary-color;
+	background-color: #282828;
 }
 
 #menu-frame {
-	border-top: 1px solid #B6B6B6;
-	height: 70px;
-	background-color: #0008A1;
-	padding-top: 20px;
-	color: white;
+	background-color: $secondary-color;
+	color: $text-color1;
+	height: 35px;
+	line-height: 35px;
 	font-size: 16px;
 	font-weight: bold;
+	border-top: 0px solid $border-color;
+	
 }
 
 #bottom-frame {
-	border-top: 1px solid #B6B6B6;
-	height: 45%;
+	background-color: $bg-color;
+	border-top: 1px solid $border-color;
+	height: 50%;
 	overflow-y: auto;
 }
 
@@ -56,27 +65,41 @@ html, body, #main-frame {
 
 
 a, a:hover, a:active, a:visited {
-	color: white;
+	color: $text-color1;
 	cursor: pointer;
 }
 
 .channel-row {
-	height: 70px;
-	border-top: 1px solid #074E98;
-	background-color: #3366CC;
+	height: 80px;
+	border-top: 10px solid $channel-border-color;
 	padding: 10px;
-	color: white;
+	color: $text-color1;
 	padding: 0;
-	min-width: 820px;
+	min-width: 965px;
+	font-size: 12px;
+	
 
 	.logo {
 		height: 70px;
-		border-bottom: 1px solid #074E98;
+		border-bottom: 1px solid $channel-border-color;
+		
+	}
+
+	.logo-wrapper {
+		background-color: $primary-color;
+		margin-left: 10px;
+		// margin-right: 5px;
 	}
 
 	.preview {
 		height: 70px;
-		border-bottom: 1px solid #074E98;
+		border-bottom: 1px solid $channel-border-color;
+	}
+
+	.preview-wrapper {
+		background-color: $primary-color;
+		margin-left: 5px;
+		// margin-right: 5px
 	}
 
 	div {
@@ -91,14 +114,20 @@ a, a:hover, a:active, a:visited {
 
 	.streamer-info {
 		width: 135px;
-		margin: 5px 0px 0 10px;
-		word-break: break-all;
+		padding: 10px 4px 0 10px;
+		background-color: $primary-color;
+		height: 100%;
+	    margin-left: -4px;
+	    word-break: break-all;
 	}
 
 	.program-info {
 		width: 600px;
-		margin: 5px 0 0 10px;
-		word-break: break-all;
+		padding: 10px 0 0 10px;
+		background-color: $primary-color;
+		height: 100%;
+		margin-left: -4px;
+		word-break: break-word;
 	}
 
 	.glyphicon-user {
@@ -113,6 +142,6 @@ a, a:hover, a:active, a:visited {
 
 
 .selected {
-	background-color: #8b008b;
+	
 }
 

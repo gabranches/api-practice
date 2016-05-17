@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['watch'], function() {
 	nodemon({
 		script: 'app.js',
-		ext: 'js'
+		ext: 'ejs js html'
 	}).on('restart', function() {
 		gulp.src('app.js')
 			.pipe(livereload());
@@ -33,8 +33,15 @@ gulp.task('build-js', function() {
 		.pipe(livereload());
 });
 
+gulp.task('copy-html', function() {
+	return gulp.src('source/templates/*.html')
+		.pipe(gulp.dest('public/templates'))
+		.pipe(livereload());
+})
+
 gulp.task('watch', function() {
 	livereload.listen();
 	gulp.watch('source/scss/*.scss', ['build-css']);
 	gulp.watch('source/js/*.js', ['build-js']);
+	gulp.watch('source/templates/*.html', ['copy-html']);
 })

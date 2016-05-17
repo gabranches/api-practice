@@ -1,22 +1,24 @@
 html, body, #main-frame {
-  height: 100%; }
+  height: 100%;
+  background-color: #3F4B6C; }
 
 #top-frame {
   height: 50%;
-  background-color: #4F5AF0; }
+  background-color: #282828; }
 
 #menu-frame {
-  border-top: 1px solid #B6B6B6;
-  height: 70px;
-  background-color: #0008A1;
-  padding-top: 20px;
+  background-color: #272727;
   color: white;
+  height: 35px;
+  line-height: 35px;
   font-size: 16px;
-  font-weight: bold; }
+  font-weight: bold;
+  border-top: 0px solid black; }
 
 #bottom-frame {
-  border-top: 1px solid #B6B6B6;
-  height: 45%;
+  background-color: #3F4B6C;
+  border-top: 1px solid black;
+  height: 50%;
   overflow-y: auto; }
 
 #chat-embed {
@@ -47,19 +49,25 @@ a, a:hover, a:active, a:visited {
   cursor: pointer; }
 
 .channel-row {
-  height: 70px;
-  border-top: 1px solid #074E98;
-  background-color: #3366CC;
+  height: 80px;
+  border-top: 10px solid #3F4B6C;
   padding: 10px;
   color: white;
   padding: 0;
-  min-width: 820px; }
+  min-width: 965px;
+  font-size: 12px; }
   .channel-row .logo {
     height: 70px;
-    border-bottom: 1px solid #074E98; }
+    border-bottom: 1px solid #3F4B6C; }
+  .channel-row .logo-wrapper {
+    background-color: #333a56;
+    margin-left: 10px; }
   .channel-row .preview {
     height: 70px;
-    border-bottom: 1px solid #074E98; }
+    border-bottom: 1px solid #3F4B6C; }
+  .channel-row .preview-wrapper {
+    background-color: #333a56;
+    margin-left: 5px; }
   .channel-row div {
     display: inline-block;
     vertical-align: top; }
@@ -68,16 +76,19 @@ a, a:hover, a:active, a:visited {
     margin-left: 5px; }
   .channel-row .streamer-info {
     width: 135px;
-    margin: 5px 0px 0 10px;
+    padding: 10px 4px 0 10px;
+    background-color: #333a56;
+    height: 100%;
+    margin-left: -4px;
     word-break: break-all; }
   .channel-row .program-info {
     width: 600px;
-    margin: 5px 0 0 10px;
-    word-break: break-all; }
+    padding: 10px 0 0 10px;
+    background-color: #333a56;
+    height: 100%;
+    margin-left: -4px;
+    word-break: break-word; }
   .channel-row .glyphicon-user {
     font-size: 12px; }
   .channel-row .name, .channel-row .title {
     font-weight: bold; }
-
-.selected {
-  background-color: #8b008b; }

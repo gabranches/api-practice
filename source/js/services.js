@@ -13,12 +13,12 @@ app.service('helpers', function() {
 	    },
 
         goBack: function(link) {
-            if(window.history.length == 0) {
+            if(window.history.length === 0) {
                 // Do nothing
             } else {
                 window.history.back();
             }
 
         }
-	}
+	};
 });

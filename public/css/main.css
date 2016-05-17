@@ -1,113 +1,83 @@
 html, body, #main-frame {
-	height:100%;
-}
+  height: 100%; }
 
 #top-frame {
-	height: 50%;
-	background-color: #4F5AF0;
-}
+  height: 50%;
+  background-color: #4F5AF0; }
 
 #menu-frame {
-	border-top: 1px solid #B6B6B6;
-	height: 70px;
-	background-color: #0008A1;
-	padding-top: 20px;
-	color: white;
-	font-size: 16px;
-	font-weight: bold;
-}
+  border-top: 1px solid #B6B6B6;
+  height: 70px;
+  background-color: #0008A1;
+  padding-top: 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold; }
 
 #bottom-frame {
-	border-top: 1px solid #B6B6B6;
-	height: 45%;
-	overflow-y: auto;
-}
+  border-top: 1px solid #B6B6B6;
+  height: 45%;
+  overflow-y: auto; }
 
 #chat-embed {
-	position: absolute; 
-	width: 100%; 
-	height: 100%;
-	left:0;
-}
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; }
 
 #profile-wrapper {
-	height: 100%;
-}
+  height: 100%; }
 
 #chat-embed-wrapper {
-	position: relative;
-	height: 100%;
-}
+  position: relative;
+  height: 100%; }
 
 #video-embed {
-	position: absolute; 
-	width: 100%; 
-	height: 100%;
-	left:0;
-}
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; }
 
 #video-embed-wrapper {
-	position: relative;
-	height: 100%;
-}
-
+  position: relative;
+  height: 100%; }
 
 a, a:hover, a:active, a:visited {
-	color: white;
-	cursor: pointer;
-}
+  color: white;
+  cursor: pointer; }
 
 .channel-row {
-	height: 70px;
-	border-top: 1px solid #074E98;
-	background-color: #3366CC;
-	padding: 10px;
-	color: white;
-	padding: 0;
-	min-width: 820px;
-}
-
-.channel-row .logo {
-	height: 70px;
-	border-bottom: 1px solid #074E98;
-}
-
-.channel-row .preview {
-	height: 70px;
-	border-bottom: 1px solid #074E98;
-}
-
-.channel-row div {
-	display: inline-block;
-	vertical-align: top;
-}
-
-.channel-row .viewers {
-	font-size: 12px;
-	margin-left: 5px;
-}
-
-.channel-row .streamer-info {
-	width: 135px;
-	margin: 5px 0px 0 10px;
-	word-break: break-all;
-}
-
-.channel-row .program-info {
-	width: 600px;
-	margin: 5px 0 0 10px;
-	word-break: break-all;
-}
-
-.channel-row .glyphicon-user {
-	font-size: 12px;
-}
-
-.channel-row .name, .channel-row .title {
-	font-weight: bold;
-}
+  height: 70px;
+  border-top: 1px solid #074E98;
+  background-color: #3366CC;
+  padding: 10px;
+  color: white;
+  padding: 0;
+  min-width: 820px; }
+  .channel-row .logo {
+    height: 70px;
+    border-bottom: 1px solid #074E98; }
+  .channel-row .preview {
+    height: 70px;
+    border-bottom: 1px solid #074E98; }
+  .channel-row div {
+    display: inline-block;
+    vertical-align: top; }
+  .channel-row .viewers {
+    font-size: 12px;
+    margin-left: 5px; }
+  .channel-row .streamer-info {
+    width: 135px;
+    margin: 5px 0px 0 10px;
+    word-break: break-all; }
+  .channel-row .program-info {
+    width: 600px;
+    margin: 5px 0 0 10px;
+    word-break: break-all; }
+  .channel-row .glyphicon-user {
+    font-size: 12px; }
+  .channel-row .name, .channel-row .title {
+    font-weight: bold; }
 
 .selected {
-	background-color: #8b008b;
-}
-
+  background-color: #8b008b; }

@@ -62,7 +62,10 @@ a, a:hover, a:active, a:visited {
     background-color: #333a56;
     background-size: cover;
     height: 100%;
-    padding: 0; }
+    padding: 0;
+    margin-left: -10px;
+    margin-top: -15px;
+    margin-right: 15px; }
   .channel-row .preview {
     position: relative;
     height: 100%; }
@@ -79,8 +82,21 @@ a, a:hover, a:active, a:visited {
     background-color: #333a56;
     height: 100%;
     word-break: break-all;
-    padding: 15px 10px 0px 0px;
-    border-right: 10px solid #3F4B6C; }
+    padding: 15px 10px 0px 10px;
+    border-right: 10px solid #3F4B6C;
+    position: relative; }
+    .channel-row .streamer-info div {
+      display: inline-block; }
+      .channel-row .streamer-info div img {
+        height: 75px; }
+    .channel-row .streamer-info .info {
+      position: absolute;
+      padding: 10px;
+      height: 75px;
+      width: 120px;
+      top: 0px;
+      right: 0px;
+      background-color: #333a56; }
   .channel-row .program-info {
     background-color: #333a56;
     height: 100%;

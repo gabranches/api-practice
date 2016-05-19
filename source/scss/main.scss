@@ -5,6 +5,7 @@ $accent-color: #52658f;
 $text-color1: white;
 $border-color: black;
 $channel-border-color: #3F4B6C;
+$channel-height: 75px;
 
 @import "mixins";
 
@@ -32,6 +33,14 @@ html, body, .container-fluid, .main-frame {
 	background-color: $bg-color;
 }
 
+
+#left-frame {
+	background-color: $bg-color;
+	height: 100%;
+	overflow-y: auto;
+	padding-left: 5px;
+}
+
 #right-frame {
 	height: 100%;
 	background-color: #282828;
@@ -45,12 +54,6 @@ html, body, .container-fluid, .main-frame {
 	font-size: 16px;
 	font-weight: bold;
 	
-}
-
-#left-frame {
-	background-color: $bg-color;
-	height: 100%;
-	overflow-y: auto;
 }
 
 #chat-embed {
@@ -96,10 +99,10 @@ a, a:hover, a:active, a:visited {
 }
 
 .channel-row {
-	height: 75px;
+	height: $channel-height;
 	color: $text-color1;
 	font-size: 12px;
-	margin: 10px 0px 0px 0px;
+	margin: 5px 0px 0px 0px;
 
 	
 
@@ -115,7 +118,7 @@ a, a:hover, a:active, a:visited {
 
 	.preview {
 		position: relative;
-		height: 100%;
+		width: 100%;
 	}
 
 	.preview-wrapper {
@@ -123,6 +126,7 @@ a, a:hover, a:active, a:visited {
 		height: 100%;
 		padding: 0;
 		left: 30px;
+		overflow: hidden;
 	}
 
 	div {
@@ -147,15 +151,15 @@ a, a:hover, a:active, a:visited {
 	    div {
 	    	display: inline-block;
 		    img {
-		    	height: 75px;
+		    	height: $channel-height;
 		    }
 	    }
 
 	    .info {
 	    	position: absolute;
 	    	padding: 10px;
-	    	height: 75px;
-	    	width: 120px;
+	    	height: $channel-height;
+	    	width: 130px;
 	    	top: 0px;
 	    	right: 0px;
 	    	background-color: $primary-color;
@@ -169,6 +173,8 @@ a, a:hover, a:active, a:visited {
 		height: 100%;
 		word-break: break-all;
 		padding: 10px 10px;
+		left: 25px;
+
 
 	}
 

@@ -22,6 +22,12 @@ html, body, .container-fluid, .main-frame {
   height: 100%;
   background-color: #3F4B6C; }
 
+#left-frame {
+  background-color: #3F4B6C;
+  height: 100%;
+  overflow-y: auto;
+  padding-left: 5px; }
+
 #right-frame {
   height: 100%;
   background-color: #282828; }
@@ -33,11 +39,6 @@ html, body, .container-fluid, .main-frame {
   line-height: 35px;
   font-size: 16px;
   font-weight: bold; }
-
-#left-frame {
-  background-color: #3F4B6C;
-  height: 100%;
-  overflow-y: auto; }
 
 #chat-embed {
   position: absolute;
@@ -77,7 +78,7 @@ a, a:hover, a:active, a:visited {
   height: 75px;
   color: white;
   font-size: 12px;
-  margin: 10px 0px 0px 0px; }
+  margin: 5px 0px 0px 0px; }
   .channel-row .logo-wrapper {
     background-color: #333a56;
     background-size: cover;
@@ -88,12 +89,13 @@ a, a:hover, a:active, a:visited {
     margin-right: 15px; }
   .channel-row .preview {
     position: relative;
-    height: 100%; }
+    width: 100%; }
   .channel-row .preview-wrapper {
     background-color: #333a56;
     height: 100%;
     padding: 0;
-    left: 30px; }
+    left: 30px;
+    overflow: hidden; }
   .channel-row div {
     display: inline-block;
     vertical-align: top; }
@@ -114,7 +116,7 @@ a, a:hover, a:active, a:visited {
       position: absolute;
       padding: 10px;
       height: 75px;
-      width: 120px;
+      width: 130px;
       top: 0px;
       right: 0px;
       background-color: #333a56; }
@@ -122,7 +124,8 @@ a, a:hover, a:active, a:visited {
     background-color: #333a56;
     height: 100%;
     word-break: break-all;
-    padding: 10px 10px; }
+    padding: 10px 10px;
+    left: 25px; }
   .channel-row .glyphicon-user {
     font-size: 12px; }
   .channel-row .name, .channel-row .title {

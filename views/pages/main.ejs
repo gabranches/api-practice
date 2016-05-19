@@ -1,18 +1,34 @@
-<div ng-controller="frontPageController" id="main-frame" class="container-fluid">
-	
-	<div id="top-frame" class="row main-page-frame">
+<div ng-controller="frontPageController" class="container-fluid">
 
-		<div id="profile-wrapper" class="col-xs-4 resize_hor">
-			{{stream}}
-		</div>
-		<div id="video-embed-wrapper" class="col-xs-5 resize_hor" style="height: 100%">
-			<video-embed></video-embed>
-		</div>
-		<div id="chat-embed-wrapper" class="col-xs-3 resize_hor">
-			<chat-embed></chat-embed>
-		</div>
+	<div class="row main-frame">
 
+		<div id="left-frame" class="col-xs-6 main-page-frame">
+			<div ng-repeat="stream in streams">
+				<channel-row></channel-row>
+			</div>
+		</div>
+		
+		<div id="right-frame" class="col-xs-6 main-page-frame">
+			<div id="video-embed-wrapper">
+				<video-embed></video-embed>
+			</div>
+
+			<div id="bottom-right-frame" class="row">
+				
+				<div id="profile-wrapper" class="col-xs-7">
+					{{stream}}
+				</div>
+				
+				<div id="chat-embed-wrapper" class="col-xs-5">
+					<chat-embed></chat-embed>
+				</div>
+				
+			</div>
+
+
+		</div>
 	</div>
+	
 
 <!-- 	<div id="menu-frame" class="row main-page-frame text-center">
 		<div class="col-xs-2"></div>
@@ -23,11 +39,7 @@
 		<div class="col-xs-2"></div>
 	</div> -->
 
-	<div id="bottom-frame" class="row main-page-frame">
-		<div ng-repeat="stream in streams">
-			<channel-row></channel-row>
-		</div>
-	</div>
+	
 
 </div>
 

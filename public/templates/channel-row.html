@@ -1,26 +1,29 @@
 <div 
-	class="channel-row" 
+	class="channel-row row" 
 	ng-class="{'selected': live.selection == stream.channel.name}"
 >
-	<div class="logo-wrapper">
-		<img ng-if="stream.channel.logo" class="logo" src="{{trustSrc(stream.channel.logo)}}" />
-		<img ng-if="!stream.channel.logo" class="logo" src="/images/default_logo.png" />
+	<div ng-if="stream.channel.logo" class="logo-wrapper hidden-xs hidden-sm hidden-md col-lg-1" style='background-image: url("{{trustSrc(stream.channel.logo)}}");'></div>
+
+	<div ng-if="!stream.channel.logo" class="logo-wrapper hidden-xs hidden-sm hidden-md col-lg-1" style="background-image: url("/images/");">
 	</div>
-	
-	<div class="streamer-info">
+
+	<div class="streamer-info col-sm-3 col-lg-2 text-right">
 		<span class="name">
 			<a ng-click="setLiveStream(stream.channel.name)">{{ stream.channel.display_name }}</a>
 		</span> <br />
 		<span class="glyphicon glyphicon-user"></span>
 		<span class="viewers">{{ stream.viewers }}</span> 
 	</div>
-	<div class="preview-wrapper">
+
+	<div class="preview-wrapper hidden-xs hidden-sm hidden-md col-lg-2">
 		<img class="preview" src="{{trustSrc(stream.preview.medium)}}" />
 	</div>
-	<div class="program-info">
+
+	<div class="program-info col-sm-9 col-lg-7">
 		<span class="title">
 			<a ng-click="setLiveStream(stream.channel.name)">{{ stream.channel.status }}</a>
 		</span> <br />
 		<a><span ng-click="getGameStreams(stream.game)" class="game">{{ stream.game }}</span></a>
 	</div>
+
 </div>

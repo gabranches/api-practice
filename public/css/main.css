@@ -1,9 +1,9 @@
-html, body, #main-frame {
+html, body, .container-fluid, .main-frame {
   height: 100%;
   background-color: #3F4B6C; }
 
-#top-frame {
-  height: 50%;
+#right-frame {
+  height: 100%;
   background-color: #282828; }
 
 #menu-frame {
@@ -12,20 +12,19 @@ html, body, #main-frame {
   height: 35px;
   line-height: 35px;
   font-size: 16px;
-  font-weight: bold;
-  border-top: 0px solid black; }
+  font-weight: bold; }
 
-#bottom-frame {
+#left-frame {
   background-color: #3F4B6C;
-  border-top: 1px solid black;
-  height: 50%;
+  height: 100%;
   overflow-y: auto; }
 
 #chat-embed {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 0; }
+  left: 0;
+  padding: 15px 15px 15px 45px; }
 
 #profile-wrapper {
   height: 100%; }
@@ -38,57 +37,57 @@ html, body, #main-frame {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 0; }
+  left: 0;
+  padding: 15px 15px 0 15px; }
 
 #video-embed-wrapper {
   position: relative;
-  height: 100%; }
+  height: 50%;
+  margin: 0 -15px 0 -15px; }
+
+#bottom-right-frame {
+  height: 50%;
+  position: relative; }
 
 a, a:hover, a:active, a:visited {
   color: white;
   cursor: pointer; }
 
 .channel-row {
-  height: 80px;
-  border-top: 10px solid #3F4B6C;
-  padding: 10px;
+  height: 75px;
   color: white;
-  padding: 0;
-  min-width: 965px;
-  font-size: 12px; }
-  .channel-row .logo {
-    height: 70px;
-    border-bottom: 1px solid #3F4B6C; }
+  font-size: 12px;
+  margin: 10px 0px 0px 0px; }
   .channel-row .logo-wrapper {
     background-color: #333a56;
-    margin-left: 10px; }
+    background-size: cover;
+    height: 100%;
+    padding: 0; }
   .channel-row .preview {
-    height: 70px;
-    border-bottom: 1px solid #3F4B6C; }
+    position: relative;
+    height: 100%; }
   .channel-row .preview-wrapper {
     background-color: #333a56;
-    margin-left: 5px; }
+    height: 100%;
+    padding: 0; }
   .channel-row div {
     display: inline-block;
     vertical-align: top; }
   .channel-row .viewers {
-    font-size: 12px;
-    margin-left: 5px; }
+    font-size: 12px; }
   .channel-row .streamer-info {
-    width: 135px;
-    padding: 10px 4px 0 10px;
     background-color: #333a56;
     height: 100%;
-    margin-left: -4px;
-    word-break: break-all; }
+    word-break: break-all;
+    padding: 15px 10px 0px 0px;
+    border-right: 10px solid #3F4B6C; }
   .channel-row .program-info {
-    width: 600px;
-    padding: 10px 0 0 10px;
     background-color: #333a56;
     height: 100%;
-    margin-left: -4px;
-    word-break: break-word; }
+    word-break: break-all;
+    padding: 10px 10px; }
   .channel-row .glyphicon-user {
     font-size: 12px; }
   .channel-row .name, .channel-row .title {
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: 12px; }

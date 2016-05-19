@@ -7,20 +7,20 @@
 	<div ng-if="!stream.channel.logo" class="logo-wrapper hidden-xs hidden-sm hidden-md col-lg-1" style="background-image: url("/images/");">
 	</div> -->
 
-	<div class="streamer-info col-sm-3 col-lg-3 text-left">
-		<div class="logo-wrapper hidden-xs hidden-sm hidden-md">
-			<img ng-if="stream.channel.logo" src="{{trustSrc(stream.channel.logo)}}" />
-		</div>
+		<div class="streamer-info col-sm-3 col-lg-3 text-left bg-wrap">
+			<div class="logo-wrapper hidden-xs hidden-sm hidden-md">
+				<img ng-if="stream.channel.logo" src="{{trustSrc(stream.channel.logo)}}" />
+			</div>
 
 
-		<div class="info text-left">
-			<span class="name">
-				<a ng-click="setLiveStream(stream.channel.name)">{{ stream.channel.display_name }}</a>
-			</span> <br />
-			<span class="glyphicon glyphicon-user"></span>
-			<span class="viewers">{{ stream.viewers }}</span> 
+			<div class="info text-left">
+				<span class="name">
+					<a ng-click="setLiveStream(stream.channel.name)">{{ stream.channel.display_name }}</a>
+				</span> <br />
+				<span class="glyphicon glyphicon-user"></span>
+				<span class="viewers">{{ stream.viewers }}</span> 
+			</div>
 		</div>
-	</div>
 
 	<div class="preview-wrapper hidden-xs hidden-sm hidden-md col-lg-2">
 		<img class="preview" src="{{trustSrc(stream.preview.medium)}}" />

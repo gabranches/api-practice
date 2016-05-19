@@ -1,3 +1,23 @@
+.bg-wrap {
+  position: relative;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
+
+.bg-wrap:before, .bg-wrap:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  -moz-border-radius: 100px / 10px;
+  border-radius: 100px / 10px; }
+
 html, body, .container-fluid, .main-frame {
   height: 100%;
   background-color: #3F4B6C; }
@@ -72,7 +92,8 @@ a, a:hover, a:active, a:visited {
   .channel-row .preview-wrapper {
     background-color: #333a56;
     height: 100%;
-    padding: 0; }
+    padding: 0;
+    left: 30px; }
   .channel-row div {
     display: inline-block;
     vertical-align: top; }
@@ -83,8 +104,8 @@ a, a:hover, a:active, a:visited {
     height: 100%;
     word-break: break-all;
     padding: 15px 10px 0px 10px;
-    border-right: 10px solid #3F4B6C;
-    position: relative; }
+    position: relative;
+    margin-right: -20px; }
     .channel-row .streamer-info div {
       display: inline-block; }
       .channel-row .streamer-info div img {

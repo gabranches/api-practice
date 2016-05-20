@@ -1,12 +1,22 @@
 // CONTROLLERS
 
-app.controller('frontPageController', ['$scope', '$sce', '$http', 'helpers', function($scope, $sce, $http, helpers) {
+app.controller('frontPageController', ['$scope', '$sce', '$http', 'helpers', '$routeParams', '$cookies', 
+	function($scope, $sce, $http, helpers, $routeParams, $cookies) {
 
 	$scope.streams = stream_data.streams;
 
+	$scope.encodeURI = helpers.encodeURI;
+
+
 	$scope.live = {
 
-		selection: "",
+		selection: function() {
+			if ($cookies.get('stream')) {
+				return $cookies.get('stream')
+			} else {
+				return helpers.pickRandomStream($scope.streams)
+			}
+		}(),
 
 		menu: 'top-streams',
 
@@ -28,11 +38,9 @@ app.controller('frontPageController', ['$scope', '$sce', '$http', 'helpers', fun
 	};
 
 	$scope.getGameStreams = function(game) {
-		game = encodeURIComponent(game.trim());
-
 		$http({
 			method: 'GET',
-			url: 'https://api.twitch.tv/kraken/streams?game=' + game
+			url: 'https://api.twitch.tv/kraken/streams?game=' + helpers.encodeURI(game)
 		}).then(function success(response) {
 		    $scope.streams = response.data.streams;
 		}, function error(response) {
@@ -41,25 +49,24 @@ app.controller('frontPageController', ['$scope', '$sce', '$http', 'helpers', fun
 	};
 
 	$scope.setLiveStream = function(name) {
+		$cookies.put('stream', name);
 		$scope.live.selection = name;
-		console.log(name);
-
 	};
 
-	angular.element(window).on("resize", function() {
-        $scope.$apply();
-    });
+	// angular.element(window).on("resize", function() {
+ //        $scope.$apply();
+ //    });
 
     $scope.trustSrc = function(src) {
     	return $sce.trustAsResourceUrl(src);
 	};
 
-	pickRandomStream = function() {
-		// Pick a random stream from the initial stream list
-		var index = Math.floor(Math.random() * ($scope.streams.length));
-		$scope.live.selection = $scope.streams[index].channel.name;
-	};
+	$scope.$watch('$routeParams', function() {
+		if($routeParams.gameName) {
+			name = $routeParams.gameName.replace('&', '%26');
+			$scope.getGameStreams(name);
+		}
+	});
 
-	pickRandomStream();
 
 }]);

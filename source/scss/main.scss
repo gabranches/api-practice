@@ -6,6 +6,7 @@ $text-color1: white;
 $border-color: black;
 $channel-border-color: #3F4B6C;
 $channel-height: 75px;
+$selected: #413254;
 
 @import "mixins";
 
@@ -61,7 +62,6 @@ html, body, .container-fluid, .main-frame {
 	width: 100%; 
 	height: 100%;
 	left:0;
-	padding: 15px 15px 15px 45px;
 }
 
 #profile-wrapper {
@@ -78,7 +78,6 @@ html, body, .container-fluid, .main-frame {
 	width: 100%; 
 	height: 100%;
 	left:0;
-	padding: 15px 15px 0 15px;
 }
 
 #video-embed-wrapper {
@@ -107,7 +106,6 @@ a, a:hover, a:active, a:visited {
 	
 
 	.logo-wrapper {
-		background-color: $primary-color;
 		background-size: cover;
 		height: 100%;
 		padding: 0;
@@ -146,8 +144,6 @@ a, a:hover, a:active, a:visited {
 	    position: relative;
 		margin-right: -20px;
 
-
-
 	    div {
 	    	display: inline-block;
 		    img {
@@ -156,16 +152,14 @@ a, a:hover, a:active, a:visited {
 	    }
 
 	    .info {
+	    	background-color: inherit;
 	    	position: absolute;
 	    	padding: 10px;
 	    	height: $channel-height;
-	    	width: 130px;
+	    	width: 100px;
 	    	top: 0px;
 	    	right: 0px;
-	    	background-color: $primary-color;
 	    }
-
-
 	}
 
 	.program-info {
@@ -174,8 +168,6 @@ a, a:hover, a:active, a:visited {
 		word-break: break-all;
 		padding: 10px 10px;
 		left: 25px;
-
-
 	}
 
 	.glyphicon-user {
@@ -191,6 +183,8 @@ a, a:hover, a:active, a:visited {
 
 
 .selected {
-	
+	.streamer-info, .program-info, .info {
+		background-color: $selected
+	}
 }
 

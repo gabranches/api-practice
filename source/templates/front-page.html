@@ -1,8 +1,10 @@
-<div ng-controller="frontPageController" class="container-fluid">
-	
-	<div class="row main-frame">
+<div ng-view class="row main-frame">
 
-		<ng-view></ng-view>
+		<div id="left-frame" class="col-xs-7 main-page-frame">
+			<div ng-repeat="stream in streams">
+				<channel-row></channel-row>
+			</div>
+		</div>
 		
 		<div id="right-frame" class="col-xs-5 main-page-frame">
 			<div id="video-embed-wrapper">
@@ -21,12 +23,6 @@
 				
 			</div>
 
+
 		</div>
 	</div>
-
-</div>
-
-<script
->  var stream_data = <%- streams %>;
-</script>
-	

@@ -44,8 +44,7 @@ html, body, .container-fluid, .main-frame {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 0;
-  padding: 15px 15px 15px 45px; }
+  left: 0; }
 
 #profile-wrapper {
   height: 100%; }
@@ -58,8 +57,7 @@ html, body, .container-fluid, .main-frame {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 0;
-  padding: 15px 15px 0 15px; }
+  left: 0; }
 
 #video-embed-wrapper {
   position: relative;
@@ -80,7 +78,6 @@ a, a:hover, a:active, a:visited {
   font-size: 12px;
   margin: 5px 0px 0px 0px; }
   .channel-row .logo-wrapper {
-    background-color: #333a56;
     background-size: cover;
     height: 100%;
     padding: 0;
@@ -113,13 +110,13 @@ a, a:hover, a:active, a:visited {
       .channel-row .streamer-info div img {
         height: 75px; }
     .channel-row .streamer-info .info {
+      background-color: inherit;
       position: absolute;
       padding: 10px;
       height: 75px;
-      width: 130px;
+      width: 100px;
       top: 0px;
-      right: 0px;
-      background-color: #333a56; }
+      right: 0px; }
   .channel-row .program-info {
     background-color: #333a56;
     height: 100%;
@@ -131,3 +128,6 @@ a, a:hover, a:active, a:visited {
   .channel-row .name, .channel-row .title {
     font-weight: bold;
     font-size: 12px; }
+
+.selected .streamer-info, .selected .program-info, .selected .info {
+  background-color: #413254; }

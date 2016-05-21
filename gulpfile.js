@@ -28,7 +28,7 @@ gulp.task('build-js', function() {
 		.pipe(jshint())
 		.pipe(jshint.reporter('jshint-stylish'))
 		.pipe(concat('main.js'))
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(gulp.dest('public/js'))
 		.pipe(livereload());
 });

@@ -2,21 +2,25 @@ $(function() {
 
 });
 
-var app = angular.module('app', ['ngRoute', 'ngCookies']);
+angular.module('app', ['ngRoute', 'ngCookies']);
 
-app.config(['$routeProvider', '$locationProvider',
-	function($routeProvider, $locationProvider) {
+
+angular.module('app').config(config);
+
+config.$inject = ['$routeProvider', '$locationProvider'];
+
+function config($routeProvider, $locationProvider) {
 		
 		$routeProvider
 
 			.when('/', {
                 templateUrl : 'templates/left-frame.html',
-                controller  : 'frontPageController'
+                controller  : 'guideController'
             })
 
 			.when('/game/:gameName', {
 				templateUrl: 'templates/left-frame.html',
-				controller: 'frontPageController'
+				controller: 'guideController'
 			});
 
 		// $locationProvider.html5Mode({
@@ -24,4 +28,3 @@ app.config(['$routeProvider', '$locationProvider',
 		// 	requireBase: false
 		// });
 	}
-]);

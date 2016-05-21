@@ -1,6 +1,6 @@
 // DIRECTIVES
 
-app.directive('chatEmbed', function() {
+angular.module('app').directive('chatEmbed', function() {
 	return {
 		restrict: 'AE',
 		replace: true,
@@ -8,7 +8,7 @@ app.directive('chatEmbed', function() {
 	};
 });
 
-app.directive('videoEmbed', function() {
+angular.module('app').directive('videoEmbed', function() {
 	return {
 		restrict: 'AE',
 		replace: true,
@@ -17,7 +17,7 @@ app.directive('videoEmbed', function() {
 });
 
 
-app.directive('channelRow', function() {
+angular.module('app').directive('channelRow', function() {
 	return {
 		restrict: 'AE',
 		replace: true,

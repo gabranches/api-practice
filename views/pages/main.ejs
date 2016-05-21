@@ -1,26 +1,69 @@
 <div ng-controller="guideController" class="container-fluid">
 	
 	<div class="row main-frame">
+	
+		<nav class="navbar">
+			
+			<div class="container-fluid">
+				
 
-		<ng-view></ng-view>
+				<div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a href="" class="navbar-brand">TwitchTV Guide</a>
+			    </div>
+				<div class="navbar-collapse collapse" id="navbar">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="/#/">Top Streams</a>
+						</li>
+						<li>
+							<a href="/#/">Top Games</a>
+						</li>
+						<li>
+							<a href="/#/">Browse Game</a>
+						</li>
+						<li>
+							<a href="/#/">Related Streams</a>
+						</li>
+						<li>
+							<a href="/#/">Followed Streams</a>
+						</li>
+						<li>
+							<a href="/#/">Followed Games</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+
+		</nav>
 		
-		<div id="right-frame" class="col-xs-5 main-page-frame">
+		
+		<div id="right-frame" class="col-lg-push-7 col-lg-5 main-page-frame">
 			<div id="video-embed-wrapper">
 				<video-embed></video-embed>
 			</div>
 
 			<div id="bottom-right-frame" class="row">
 				
-				<div id="profile-wrapper" class="col-xs-7">
+				<div id="profile-wrapper" class="hidden-md hidden-xs hidden-sm col-xs-7">
 				</div>
 				
-				<div id="chat-embed-wrapper" class="col-xs-5">
+				<div id="chat-embed-wrapper" class="hidden-md hidden-xs hidden-sm col-xs-5">
 					<chat-embed></chat-embed>
 				</div>
 				
 			</div>
 
 		</div>
+
+		<ng-view></ng-view>
+
 	</div>
 
 </div>

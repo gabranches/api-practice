@@ -1,7 +1,7 @@
-$bg-color: #3F4B6C;
-$primary-color: #333a56;
-$secondary-color: #272727;
-$accent-color: #52658f;
+$color1: #3F4B6C;
+$color2: #333a56;
+$color3: #272727;
+$color4: #52658f;
 $text-color1: white;
 $border-color: black;
 $channel-border-color: #3F4B6C;
@@ -29,14 +29,18 @@ $selected: #413254;
     border-radius:100px / 10px;
 }
 
-html, body, .container-fluid, .main-frame {
+html, body, .main-frame {
 	height:100%;
-	background-color: $bg-color;
+	background-color: $color3;
+}
+
+.container-fluid {
+	height: 100%;
 }
 
 
 #left-frame {
-	background-color: $bg-color;
+	background-color: $color3;
 	height: 100%;
 	overflow-y: auto;
 	padding-left: 5px;
@@ -48,7 +52,7 @@ html, body, .container-fluid, .main-frame {
 }
 
 #menu-frame {
-	background-color: $secondary-color;
+	background-color: $color3;
 	color: $text-color1;
 	height: 35px;
 	line-height: 35px;
@@ -97,11 +101,37 @@ a, a:hover, a:active, a:visited {
 	cursor: pointer;
 }
 
+.guide {
+	overflow-y: auto;
+	height: 95%;
+	margin: 0 -15px -15px 0;
+	background-color: $color1;
+}
+
+.navbar {
+	// height: 5%;
+	margin-bottom: 1px;
+	background-color: $color3;
+}
+
+.nav {
+	li{
+		a:hover, a:active, a:focus {
+			background-color: black;
+			border: 0;
+		}
+	}
+}
+
+.icon-bar {
+	background-color: $text-color1;
+}
+
 .channel-row {
 	height: $channel-height;
 	color: $text-color1;
 	font-size: 12px;
-	margin: 5px 0px 0px 0px;
+	margin: 5px 15px 0px 0px;
 
 	
 
@@ -120,7 +150,7 @@ a, a:hover, a:active, a:visited {
 	}
 
 	.preview-wrapper {
-		background-color: $primary-color;
+		background-color: $color2;
 		height: 100%;
 		padding: 0;
 		left: 30px;
@@ -137,7 +167,7 @@ a, a:hover, a:active, a:visited {
 	}
 
 	.streamer-info {
-		background-color: $primary-color;
+		background-color: $color2;
 		height: 100%;
 	    word-break: break-all;
 	    padding: 15px 10px 0px 10px;
@@ -163,7 +193,7 @@ a, a:hover, a:active, a:visited {
 	}
 
 	.program-info {
-		background-color: $primary-color;
+		background-color: $color2;
 		height: 100%;
 		word-break: break-all;
 		padding: 10px 10px;

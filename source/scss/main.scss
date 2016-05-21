@@ -105,8 +105,6 @@ html, body, .main-frame {
 a, a:hover, a:active, a:visited {
 	color: $text-color1;
 	cursor: pointer;
-	font-size: 12px;
-
 }
 
 .guide {
@@ -118,7 +116,7 @@ a, a:hover, a:active, a:visited {
 
 .navbar {
 
-	margin-bottom: 0px;
+	margin-bottom: -1px;
 	background-color: $color3;
 }
 
@@ -129,6 +127,11 @@ a, a:hover, a:active, a:visited {
 			border: 0;
 		}
 	}
+
+	a {
+		font-size: 14px;
+	}
+
 }
 
 .icon-bar {
@@ -189,14 +192,14 @@ a, a:hover, a:active, a:visited {
 		    }
 	    }
 
+
 	    .info {
 	    	background-color: inherit;
+	    	word-break: break-all;
 	    	position: absolute;
-	    	padding: 10px;
-	    	height: $channel-height;
-	    	width: 180px;
-	    	top: 0px;
-	    	right: 0px;
+	    	top: 10px;
+	    	left: 85px;
+	    	padding-right: 10px;
 	    }
 	}
 
@@ -251,6 +254,10 @@ a, a:hover, a:active, a:visited {
 		height: 45%;
 	}
 
+	.info {
+		padding-left: 10px;
+	}
+
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -277,8 +284,7 @@ a, a:hover, a:active, a:visited {
 		height: 94.5%
 	}
 
-	.info {
-		width: 100px;
-	}
+	
+
 
 }

@@ -1,7 +1,7 @@
 <div class="channel-row row" ng-class="{'selected': guide.selection.name == stream.channel.name}">
 
-	<div class="streamer-info col-xs-5 col-sm-3 col-md-2 col-lg-3 text-left bg-wrap">
-		<div class="logo-wrapper hidden-xs hidden-sm hidden-md">
+	<div class="streamer-info col-xs-5 col-sm-3 col-md-3 col-lg-3 text-left bg-wrap">
+		<div class="logo-wrapper">
 			<img ng-if="stream.channel.logo" src="{{trustSrc(stream.channel.logo)}}" />
 			<img ng-if="!stream.channel.logo" src="/images/default_logo.png" />
 		</div>
@@ -19,7 +19,7 @@
 	</div>
 
 
-	<div class="program-info col-xs-7 col-sm-9 col-md-8 col-lg-7 bg-wrap">
+	<div class="program-info col-xs-7 col-sm-9 col-md-7 col-lg-7 bg-wrap">
 		<span class="title">
 			<a ng-click="setLiveStream(stream.channel.name)">{{ stream.channel.status }}</a>
 		</span> <br />

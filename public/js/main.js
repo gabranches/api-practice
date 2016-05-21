@@ -115,7 +115,7 @@ angular.module('app').factory('guide', guide);
 function guide() {
     
     var selection = {
-        name: "forsenlol",
+        name: "",
         list: stream_data.streams
     };
 

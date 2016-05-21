@@ -73,8 +73,7 @@ html, body, .main-frame {
 
 a, a:hover, a:active, a:visited {
   color: white;
-  cursor: pointer;
-  font-size: 12px; }
+  cursor: pointer; }
 
 .guide {
   overflow-y: auto;
@@ -83,12 +82,14 @@ a, a:hover, a:active, a:visited {
   background-color: #3F4B6C; }
 
 .navbar {
-  margin-bottom: 0px;
+  margin-bottom: -1px;
   background-color: #272727; }
 
 .nav li a:hover, .nav li a:active, .nav li a:focus {
   background-color: black;
   border: 0; }
+.nav a {
+  font-size: 14px; }
 
 .icon-bar {
   background-color: white; }
@@ -132,12 +133,11 @@ a, a:hover, a:active, a:visited {
         height: 75px; }
     .channel-row .streamer-info .info {
       background-color: inherit;
+      word-break: break-all;
       position: absolute;
-      padding: 10px;
-      height: 75px;
-      width: 180px;
-      top: 0px;
-      right: 0px; }
+      top: 10px;
+      left: 85px;
+      padding-right: 10px; }
   .channel-row .program-info {
     background-color: #333a56;
     height: 100%;
@@ -166,7 +166,10 @@ a, a:hover, a:active, a:visited {
     height: 49%; }
 
   #left-frame {
-    height: 45%; } }
+    height: 45%; }
+
+  .info {
+    padding-left: 10px; } }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   #right-frame {
@@ -183,7 +186,4 @@ a, a:hover, a:active, a:visited {
     height: 100%; }
 
   .container-fluid {
-    height: 94.5%; }
-
-  .info {
-    width: 100px; } }
+    height: 94.5%; } }

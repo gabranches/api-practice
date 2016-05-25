@@ -10,20 +10,24 @@ class User:
         self.connections = []
         self.describe()
 
+
+    # Output
     def describe(self):
         print('Name: {}'.format(self.name))
         print('Followers: {}'.format(self.followers))
         print('Followees: {}'.format(self.followees))
 
-    def get_connections(self):
+
+    # Returns a Counter object of connections
+    def rank_connections(self):
         return collections.Counter(self.connections)
 
 
-def get_relevant(user, users):
-
-    for follower in user.followers:
-        for followees in users[follower].followees:
-            user.connections.append(followees)
+    # Create a list of followees of followers
+    def find_connections(self, users):
+        for follower in self.followers:
+            for followees in users[follower].followees:
+                self.connections.append(followees)
 
 
 def pick_random(name, list):
@@ -40,7 +44,6 @@ def pick_random(name, list):
 
 if __name__ == '__main__':
 
-
     user_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l']
     
     users = {}
@@ -52,10 +55,9 @@ if __name__ == '__main__':
 
     # Calculate connections
     for user in users:
-        get_relevant(users[user], users)
+        users[user].find_connections(users)
 
     print('----------------------')
     print(users['b'].connections)
-    print(users['b'].get_connections())
-    print(users['b'].__dict__)
+    print(users['b'].rank_connections())
 

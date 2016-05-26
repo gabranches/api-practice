@@ -1,5 +1,6 @@
-from random import randrange
 import collections
+
+from helpers import sort_dict, pick_random
 
 class User:
 
@@ -8,7 +9,6 @@ class User:
         self.followers = followers
         self.followees = followees
         self.connections = []
-        self.describe()
 
 
     # Output
@@ -16,11 +16,21 @@ class User:
         print('Name: {}'.format(self.name))
         print('Followers: {}'.format(self.followers))
         print('Followees: {}'.format(self.followees))
+        print('Follower weight: {}'.format(self.follow_weight))
 
 
-    # Returns a Counter object of connections
-    def rank_connections(self):
-        return collections.Counter(self.connections)
+    # Sets a Counter object of connections
+    def count_connections(self):
+        self.counts = collections.Counter(self.connections)
+
+
+    # Score connections based on the follow weight
+    def score_connections(self, users):
+        counts = self.counts
+        self.scores = {}
+        for i in counts:
+
+            self.scores[i] = users[i].follow_weight * counts[i]
 
 
     # Create a list of followees of followers
@@ -28,36 +38,34 @@ class User:
         for follower in self.followers:
             for followees in users[follower].followees:
                 self.connections.append(followees)
-
-
-def pick_random(name, list):
-    chosen = []
-    for i in range(0, len(list)/2):
-        choice = list[randrange(0, len(list))]
-
-        if choice not in chosen and choice != name:
-            chosen.append(choice)
-    
-    return chosen
-
+        self.count_connections()
 
 
 if __name__ == '__main__':
 
-    user_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l']
+    streamer_list = ['a', 'b', 'c']
+    user_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o']
     
     users = {}
 
-    # Generate user followers/followees
+    # Generate streamer followers/followees
     for user in user_list:
         new_user = User(user, pick_random(user, user_list), pick_random(user, user_list))
         users[user] = new_user
 
-    # Calculate connections
+    # Determine follower weight
     for user in users:
+        users[user].follow_weight = (len(user_list) - len(users[user].followers)) / len(user_list)
+        users[user].describe()
+
+    # Calculate connections
+    for user in streamer_list:
         users[user].find_connections(users)
+        users[user].score_connections(users)
 
     print('----------------------')
-    print(users['b'].connections)
-    print(users['b'].rank_connections())
+    user = users['b']
+    print(user.connections)
+    print(user.counts)
+    print(sort_dict(user.scores, True))
 
